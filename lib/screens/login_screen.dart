@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../constants/constants.dart';
+import '../widgets/custom_button.dart';
 
 class LoginPage extends StatefulWidget {
   static String id = '/LoginPage';
@@ -35,7 +36,7 @@ class _LoginPageState extends State<LoginPage> {
                 children: [
                   Column(
                     children: [
-                      const SizedBox(height: 40),
+                      const SizedBox(height: 50),
                       Align(
                         alignment: Alignment.center,
                         child: Image.asset('assets/logo/logo-reputa1.png'),
@@ -64,31 +65,14 @@ class _LoginPageState extends State<LoginPage> {
                     ],
                   ),
                   const SizedBox(height: 20.0),
-                  GestureDetector(
+                  CustomButton(
+                    text: 'ĐĂNG NHẬP',
                     onTap: () {
                       setState(() {
                         _showSpinner = true;
                       });
                       // Thực hiện các tác vụ khi nút được nhấn
                     },
-                    child: Container(
-                      padding: const EdgeInsets.symmetric(vertical: 10.0),
-                      height: 60,
-                      decoration: BoxDecoration(
-                        color: MyColors.primaryColor,
-                        borderRadius: BorderRadius.circular(
-                            10.0), // Đặt độ cong cho các góc
-                      ),
-                      child: const Center(
-                        child: Text(
-                          'ĐĂNG NHẬP ',
-                          style: TextStyle(
-                              fontSize: 18.0,
-                              color: MyColors.whiteColor,
-                              fontWeight: FontWeight.w400),
-                        ),
-                      ),
-                    ),
                   ),
                   const SizedBox(height: 20),
                   const Align(
@@ -122,7 +106,7 @@ class _LoginPageState extends State<LoginPage> {
                       ),
                       child: const Center(
                         child: Text(
-                          'ĐĂNG NHẬP VỚI SỐ ĐIỆN THOẠI ',
+                          'ĐĂNG NHẬP VỚI SỐ ĐIỆN THOẠI',
                           style: TextStyle(
                             fontSize: 18.0,
                             color: MyColors.primaryColor,
